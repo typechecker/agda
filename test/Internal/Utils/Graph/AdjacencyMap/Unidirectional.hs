@@ -610,7 +610,7 @@ prop_longestPaths1 =
     (all (\(n, ps) -> all ((== n) . length) ps) $
      map Graph.label (edges g'))
     .&&.
-  (forAll (nodeIn g) $ \n ->
+  forAll (nodeIn g) (\n ->
    Map.keysSet (reachableFrom g n)
      ==
    Map.keysSet (neighboursMap n g'))

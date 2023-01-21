@@ -164,7 +164,7 @@ toAbsN (Abs n x') = AbsN (n : absNName x') (unAbsN x')
 toAbsN NoAbs{}    = __IMPOSSIBLE__
 
 absAppN :: Subst a => AbsN a -> [SubstArg a] -> a
-absAppN f xs = (parallelS $ reverse xs) `applySubst` unAbsN f
+absAppN f xs = parallelS (reverse xs) `applySubst` unAbsN f
 
 type ArgVars m = (forall b. (Subst b, DeBruijn b) => [NamesT m (Arg b)])
 

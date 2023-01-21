@@ -1183,7 +1183,7 @@ checkExpr' cmp e t =
 
     e <- scopedExpr e
 
-    irrelevantIfProp <- (runBlocked $ isPropM t) >>= \case
+    irrelevantIfProp <- runBlocked (isPropM t) >>= \case
       Right True  -> do
         let mod = defaultModality { modRelevance = Irrelevant }
         return $ fmap dontCare . applyModalityToContext mod

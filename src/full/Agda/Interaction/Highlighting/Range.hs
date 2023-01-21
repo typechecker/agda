@@ -67,7 +67,7 @@ rangesInvariant (Ranges rs) =
 -- The ranges are assumed to be well-formed.
 
 overlapping :: Range -> Range -> Bool
-overlapping r1 r2 = (not $ r1 `isLeftOf` r2) && (not $ r2 `isLeftOf` r1)
+overlapping r1 r2 = not (r1 `isLeftOf` r2) && not (r2 `isLeftOf` r1)
 
 isLeftOf :: Range -> Range -> Bool
 isLeftOf r1 r2 = to r1 <= from r2
