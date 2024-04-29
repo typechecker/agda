@@ -15,7 +15,7 @@ import Internal.Helpers
 ------------------------------------------------------------------------
 
 prop_NonemptyList_roundtrip :: Eq a => List1 a -> Bool
-prop_NonemptyList_roundtrip l = maybe False (l ==) $ List1.nonEmpty $ List1.toList l
+prop_NonemptyList_roundtrip l = Just l == List1.nonEmpty (List1.toList l)
 
 prop_foldr_id :: List1 Int -> Bool
 prop_foldr_id xs = List1.foldr (<|) List1.singleton xs == xs

@@ -169,7 +169,7 @@ classifyIssue mileStoneId i = Class{..}
   where
   correctMilestone        = maybe False ((mileStoneId ==) . milestoneNumber) $ issueMilestone i
   isIssue                 = isNothing $ issuePullRequest i
-  happened                = maybe True (StateReasonNotPlanned /=) $ issueStateReason i
+  happened                = Just StateReasonNotPlanned /= issueStateReason i
   (badLabels, goodLabels) = bimap Set.fromList Set.fromList $
      partition (`Set.member` labelsNotInChangelog) $ issueLabelsNames i
 

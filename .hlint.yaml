@@ -57,7 +57,6 @@
 - ignore: {name: "Use <=<"} # 1 hint
 - ignore: {name: "Use =<<"} # 1 hint
 - ignore: {name: "Use >"} # 1 hint
-- ignore: {name: "Use Just"} # 2 hints
 - ignore: {name: "Use LANGUAGE pragmas"} # 7 hints
 - ignore: {name: "Use all"} # 1 hint
 - ignore: {name: "Use camelCase"} # 72 hints
